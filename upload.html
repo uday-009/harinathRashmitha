@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex,nofollow">
+<title>Upload Photos | Harinath &amp; Rashmitha</title>
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Cormorant+Garamond:wght@400;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+:root{--cream:#fff4e2;--peach:#fde3bf;--maroon:#7a1020;--red:#a3162b;--gold:#b8862b;--gold2:#e2b457;--wood:#7b4a24;--green:#3f6b35}
+*{box-sizing:border-box}body{margin:0;min-height:100vh;background:linear-gradient(135deg,#f6d9ac,#fff6e8 48%,#fde3bf);color:var(--maroon);font:1.05rem 'Cormorant Garamond',serif}
+main{max-width:780px;margin:0 auto;padding:36px 20px 64px}
+.mast{text-align:center;margin-bottom:24px}.eyebrow{font:.68rem 'Cinzel',serif;letter-spacing:.24em;color:var(--gold);margin:0 0 4px}
+h1{font:400 2.8rem 'Great Vibes',cursive;color:var(--red);margin:0}.sub{color:var(--wood);margin:2px 0 0}
+.ornament{height:16px;width:180px;margin:12px auto 0;background:linear-gradient(90deg,transparent,var(--gold),transparent) center/100% 1px no-repeat;position:relative}
+.ornament:after{content:"◆";position:absolute;left:50%;top:1px;transform:translateX(-50%);padding:0 8px;background:#fff4e2;color:var(--gold);font-size:10px}
+.card{background:rgba(255,252,244,.82);border:1.5px solid var(--gold);border-radius:16px;padding:22px;margin:14px 0;box-shadow:0 6px 18px rgba(122,16,32,.1)}
+.section-head{text-align:center;margin:0 auto 18px;max-width:560px}.section-head h2{font:400 2rem 'Great Vibes',cursive;color:var(--red);margin:0}
+.section-head p{margin:2px 0;color:var(--wood)}.section-head .eyebrow{margin-bottom:2px}
+label{display:block;font:.7rem 'Cinzel',serif;letter-spacing:.13em;margin:0 0 8px}
+input[type=password]{width:100%;padding:12px;border:1px solid var(--gold);border-radius:8px;font:1rem 'Cormorant Garamond',serif;background:#fffaf0;color:var(--maroon)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;margin-top:12px;padding:12px 20px;border:1.5px solid var(--maroon);border-radius:30px;background:var(--maroon);color:#fff8e9;font:600 .72rem 'Cinzel',serif;letter-spacing:.13em;cursor:pointer}
+.btn:disabled{opacity:.45;cursor:not-allowed}.login{max-width:440px;margin:0 auto}.login .btn{width:100%}
+.portrait-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.portrait{border:1px solid #dfc58e;border-radius:14px;background:linear-gradient(160deg,rgba(255,255,255,.75),rgba(253,227,191,.45));padding:18px;text-align:center}
+.portrait h3{font:600 .75rem 'Cinzel',serif;letter-spacing:.16em;margin:0 0 12px;color:var(--maroon)}
+.portrait-frame{width:144px;height:144px;padding:5px;margin:0 auto 12px;border-radius:50%;background:conic-gradient(#ee8a22,#f7b92a,#e8573a,#f7b92a,#ee8a22);box-shadow:0 4px 14px rgba(122,16,32,.16)}
+.portrait-frame img{display:block;width:100%;height:100%;border:3px solid var(--cream);border-radius:50%;object-fit:cover;background:#f1dcb4}
+.current-label{font:.58rem 'Cinzel',serif;letter-spacing:.14em;color:var(--wood);margin:0 0 10px}
+.file-input{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;clip-path:inset(50%);border:0}
+.choose-file{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:42px;padding:9px 16px;border:1.5px dashed var(--gold);border-radius:24px;background:rgba(255,255,255,.6);color:var(--maroon);cursor:pointer;font:.62rem 'Cinzel',serif;letter-spacing:.1em}
+.choose-file:hover,.choose-file:focus-within{background:#fff8e9;border-style:solid}
+.file-name{min-height:1.3em;margin:8px 0 0;color:var(--wood);font-size:.92rem;overflow-wrap:anywhere}
+.portrait .btn{width:100%;margin-top:10px}.status{min-height:1.35em;margin:8px 0 0;font-size:.92rem}.ok{color:var(--green)}.err{color:#a3162b}
+.drop{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:126px;text-align:center;border:1.5px dashed var(--gold);border-radius:14px;padding:20px 14px;cursor:pointer;background:rgba(255,250,240,.72);color:var(--maroon)}
+.drop b{font:.65rem 'Cinzel',serif;letter-spacing:.14em}.drop span{color:var(--wood);font-size:.95rem;margin-top:5px}.drop input{position:absolute;width:1px;height:1px;opacity:0}
+#log div{padding:7px 0;border-bottom:1px solid #ead9b6;font-size:.95rem}.gallery-head{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:12px}
+.gallery-head label{margin:0}.gallery-head p{margin:0;color:var(--wood);font-size:.95rem}
+#grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}#grid figure{margin:0;position:relative}
+#grid img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:10px;border:1.5px solid var(--gold2);box-shadow:0 3px 10px rgba(122,16,32,.14);background:#f1dcb4}
+#grid button{position:absolute;top:5px;right:5px;width:28px;height:28px;border-radius:50%;border:1px solid rgba(255,255,255,.6);background:rgba(122,16,32,.9);color:#fff;font-size:17px;cursor:pointer}
+#empty{text-align:center;color:var(--wood);padding:16px 0;margin:0}
+.note{text-align:center;color:var(--wood);font-size:.92rem;margin:14px 0 0}
+@media(max-width:600px){main{padding:24px 14px 44px}.card{padding:18px 14px}.portrait-grid{grid-template-columns:1fr;gap:12px}.portrait{padding:16px}.portrait-frame{width:132px;height:132px}#grid{grid-template-columns:repeat(3,1fr)}}
+</style></head><body><main>
+<header class="mast"><p class="eyebrow">HARINATH &amp; RASHMITHA</p><h1>Wedding Photo Studio</h1><p class="sub">Update the portraits and captured moments</p><div class="ornament"></div></header>
+<div class="card login" id="login"><label for="pw">UPLOAD PASSWORD</label><input type="password" id="pw" autocomplete="current-password"><button class="btn" id="go" type="button">CONTINUE</button><p id="lerr" class="status err" role="status" aria-live="polite"></p></div>
+<div id="app" hidden>
+<section class="card"><div class="section-head"><p class="eyebrow">PERSONAL PORTRAITS</p><h2>The Couple</h2><p>Choose a portrait for each person. They appear in the invitation's About the Couple section.</p><p id="portraitNotice" class="status err" role="status" aria-live="polite" hidden></p></div>
+<div class="portrait-grid">
+<article class="portrait"><h3>GROOM</h3><div class="portrait-frame"><img id="groomPreview" src="assests/photos/groom.jpg" alt="Groom portrait preview"></div><p class="current-label">CURRENTLY ON THE INVITATION</p><input class="file-input portrait-file" type="file" id="groomFile" accept="image/*,.jpg,.jpeg,.png,.tif,.tiff,.webp,.gif,.bmp,.avif,.heic,.heif"><label class="choose-file" for="groomFile">CHOOSE GROOM PHOTO</label><p id="groomFileName" class="file-name">No new photo selected</p><button class="btn portrait-upload" data-role="groom" type="button" disabled>SAVE GROOM PORTRAIT</button><p id="groomStatus" class="status" role="status" aria-live="polite"></p></article>
+<article class="portrait"><h3>BRIDE</h3><div class="portrait-frame"><img id="bridePreview" src="assests/photos/bride.jpg" alt="Bride portrait preview"></div><p class="current-label">CURRENTLY ON THE INVITATION</p><input class="file-input portrait-file" type="file" id="brideFile" accept="image/*,.jpg,.jpeg,.png,.tif,.tiff,.webp,.gif,.bmp,.avif,.heic,.heif"><label class="choose-file" for="brideFile">CHOOSE BRIDE PHOTO</label><p id="brideFileName" class="file-name">No new photo selected</p><button class="btn portrait-upload" data-role="bride" type="button" disabled>SAVE BRIDE PORTRAIT</button><p id="brideStatus" class="status" role="status" aria-live="polite"></p></article>
+</div>
+<p class="note">Your original photo stays unchanged. Images are resized and saved as JPEG.</p></section>
+<section class="card"><div class="section-head"><p class="eyebrow">SHARED WITH YOUR GUESTS</p><h2>Captured Moments</h2><p>Add several photos at once. These appear in the invitation's gallery.</p></div>
+<label class="drop"><input type="file" id="files" accept="image/*,.jpg,.jpeg,.png,.tif,.tiff,.webp,.gif,.bmp,.avif,.heic,.heif" multiple><b>TAP TO CHOOSE PHOTOS</b><span>Choose multiple JPG, PNG, TIFF or WEBP images</span></label><div id="log"></div>
+<div class="gallery-head" style="margin-top:20px"><label>UPLOADED PHOTOS · <span id="count">0</span></label><p id="empty">No uploads yet</p></div><div id="grid"></div></section>
+</div>
+<script>
+const $=s=>document.querySelector(s);let pw=sessionStorage.getItem('pw')||'';
+const hd=()=>({'X-Password':pw});
+async function check(p){const r=await fetch('api/check',{headers:{'X-Password':p}});return r.ok}
+async function enter(p){if(await check(p)){pw=p;sessionStorage.setItem('pw',p);$('#login').hidden=true;$('#app').hidden=false;await Promise.all([load(),loadPortraits()]);return true}return false}
+$('#go').onclick=async()=>{$('#lerr').textContent='';if(!(await enter($('#pw').value)))$('#lerr').textContent='Wrong password.'};
+$('#pw').addEventListener('keydown',e=>e.key==='Enter'&&$('#go').click());
+if(pw)enter(pw);
+async function load(){const l=await (await fetch('api/photos',{cache:'no-store'})).json();$('#count').textContent=l.length;$('#empty').hidden=l.length>0;
+ $('#grid').innerHTML=l.map(u=>`<figure><img src="${u}" loading="lazy" alt=""><button data-n="${u.split('/').pop()}" aria-label="Delete photo">&times;</button></figure>`).join('')}
+$('#grid').addEventListener('click',async e=>{const n=e.target.dataset&&e.target.dataset.n;if(!n||!confirm('Delete this photo?'))return;await fetch('api/photos/'+n,{method:'DELETE',headers:hd()});load()});
+function apiError(r,j,action){if(r.status===404)return 'Portrait uploads are not enabled on this server yet. Restart or redeploy it with the updated server.js, then reload this page.';
+ if(r.status===401)return 'Your upload password was rejected. Reload this page and sign in again.';
+ if(r.status===413)return 'This image is too large for the server upload limit.';
+ if(r.status>=500)return 'The server could not save this image. Check that the uploads folder is writable and has space.';
+ return j&&j.error?j.error:`${action} failed (HTTP ${r.status}).`}
+async function loadPortraits(){try{const r=await fetch('api/portraits',{cache:'no-store'});if(!r.ok)throw new Error(apiError(r,null,'Loading portraits'));const p=await r.json();
+ for(const role of['groom','bride'])if(p[role])$(`#${role}Preview`).src=p[role]}
+ catch(e){$('#portraitNotice').textContent=e.message||'Could not load portrait information.';$('#portraitNotice').hidden=false}}
+const previewUrls={};
+document.querySelectorAll('.portrait-file').forEach(input=>input.addEventListener('change',()=>{const role=input.id.replace('File',''),file=input.files[0],button=$(`.portrait-upload[data-role="${role}"]`),status=$(`#${role}Status`);
+ if(previewUrls[role])URL.revokeObjectURL(previewUrls[role]);status.textContent='';status.className='status';
+ if(!file){$(`#${role}FileName`).textContent='No new photo selected';button.disabled=true;return}
+ $(`#${role}FileName`).textContent=file.name;previewUrls[role]=URL.createObjectURL(file);$(`#${role}Preview`).src=previewUrls[role];button.disabled=false}));
+document.querySelectorAll('.portrait-upload').forEach(button=>button.addEventListener('click',async()=>{const role=button.dataset.role,file=$(`#${role}File`).files[0],status=$(`#${role}Status`);
+ status.textContent='';status.className='';
+ if(!file){status.textContent='Choose a photo first.';status.className='err';return}
+ if(!isImg(file)){status.textContent='Please choose an image file.';status.className='err';return}
+ button.disabled=true;status.textContent='Uploading...';
+ try{const blob=await toJpeg(file),r=await fetch(`api/portraits/${role}`,{method:'POST',headers:{...hd(),'Content-Type':'image/jpeg'},body:blob}),j=await r.json().catch(()=>null);
+  if(!r.ok||!j||!j.ok)throw new Error(apiError(r,j,'Portrait upload'));$(`#${role}Preview`).src=j.url;
+  if(previewUrls[role]){URL.revokeObjectURL(previewUrls[role]);delete previewUrls[role]}
+  $(`#${role}File`).value='';$(`#${role}FileName`).textContent='Saved to the invitation';status.textContent='Portrait saved to the invitation.';status.className='status ok'
+ }catch(err){status.textContent=err instanceof TypeError?'Could not reach the server. Check that the Node app is running and try again.':(err.message||'Could not upload portrait.');status.className='status err'}
+ finally{button.disabled=!$(`#${role}File`).files[0]}}));
+async function toJpeg(file){let bmp;try{bmp=await createImageBitmap(file)}catch(_){bmp=await new Promise((ok,no)=>{const i=new Image();i.onload=()=>ok(i);i.onerror=no;i.src=URL.createObjectURL(file)})}
+ const w=bmp.width||bmp.naturalWidth,h=bmp.height||bmp.naturalHeight,s=Math.min(1,1600/Math.max(w,h)),c=document.createElement('canvas');c.width=Math.round(w*s);c.height=Math.round(h*s);
+ const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(bmp,0,0,c.width,c.height);
+ return new Promise((ok,no)=>c.toBlob(b=>b?ok(b):no(),'image/jpeg',.85))}
+const isImg=f=>f.type.startsWith('image/')||/\.(jpe?g|png|tiff?|webp|gif|bmp|avif|heic|heif)$/i.test(f.name);
+$('#files').addEventListener('change',async e=>{const fs=[...e.target.files],log=$('#log');log.innerHTML='';
+ for(const f of fs){const row=document.createElement('div');row.textContent=f.name+' ...';log.append(row);
+  if(!isImg(f)){row.textContent=f.name+' - not an image, skipped';row.className='err';continue}
+  try{const blob=await toJpeg(f);const r=await fetch('api/upload',{method:'POST',headers:{...hd(),'Content-Type':'image/jpeg'},body:blob});const j=await r.json().catch(()=>({}));
+   if(!r.ok||!j.ok)throw new Error(j.error||'upload failed');row.textContent=f.name+' - uploaded';row.className='ok'}
+  catch(err){row.textContent=f.name+' - '+(err.message==='upload failed'||err.name==='TypeError'?'could not upload':(err.message||"this format can't be read here; please use JPG or PNG"));row.className='err'}}
+ e.target.value='';load()});
+</script></main></body></html>
