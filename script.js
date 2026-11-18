@@ -1,5 +1,5 @@
 /* ===== CONFIG ===== */
-const GROOM_WHATSAPP='918143465378';  // groom's WhatsApp number with country code, digits only e.g. '919XXXXXXXXX'
+const GROOM_WHATSAPP='919908598014';  // groom's WhatsApp number with country code, digits only e.g. '919XXXXXXXXX'
 const STORY_VIDEO_ID='';  // YouTube video ID of your story video (the part after v= in the link)
 const SCROLL_SPEED=40;    // px per second
 const WEDDING=new Date('2026-11-20T10:57:00+05:30');
